@@ -10,8 +10,7 @@ public class Menubai1 {
         SoNguyen n = null;
         XauNhiPhan n1 = null;
         SinhHoanVi n2 = null;
-        while(true){
-            System.out.println("-------MENU-------");
+        System.out.println("-------MENU-------");
             System.out.println("1. Nhap n");
             System.out.println("2. Tong 1 den n");
             System.out.println("3. Tich 1 den n");
@@ -29,7 +28,9 @@ public class Menubai1 {
             System.out.println("15. Hoan vi do dai n");
             System.out.println("16. Cac so nguyen to co n chu so");
             System.out.println("17. Cac so thuan nghich co n chu so");
-            System.out.println("0. Chi chon 0 -> 13");
+            System.out.println("0. Thoat");
+        while(true){
+            
             int chon;
             Scanner sc = new Scanner(System.in);
             chon = Integer.parseInt(sc.nextLine());

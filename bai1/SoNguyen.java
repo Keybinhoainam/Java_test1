@@ -8,7 +8,7 @@ public class SoNguyen {
     
     public SoNguyen(){
         System.out.print("Nhap n: ");
-        this.n = Integer.parseInt(sc.nextLine());
+        n = Integer.parseInt(sc.nextLine());
     }
     
     public void tong1DenN(){
@@ -180,5 +180,6 @@ public class SoNguyen {
         }
         System.out.println();
     }
+    
     
 }
