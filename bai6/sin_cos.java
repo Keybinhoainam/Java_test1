@@ -8,8 +8,10 @@ public class sin_cos {
     private Scanner sc = new Scanner(System.in);
     
     public sin_cos(){
-        System.out.print("Nhap goc: ");
+        System.out.print("Nhap goc(Đơn vị Rad): ");
         this.x = Double.parseDouble(sc.nextLine());
+        System.out.printf("Nhap epsilon: ");
+        epsilon = Double.parseDouble(sc.nextLine());
     }
     
     public double Fsin(long n) {
@@ -39,7 +41,7 @@ public class sin_cos {
     public void Sin(){
         sin = 0;
         n = 0;
-        while(Math.abs(Fsin(n)) > 0.001) {
+        while(Math.abs(Fsin(n)) > epsilon) {
             sin += Fsin(n);
             n++;
         }
@@ -49,7 +51,7 @@ public class sin_cos {
     public void Cos(){
         cos = 0;
         n = 0;
-        while(Math.abs(Fcos(n)) > 0.001) {
+        while(Math.abs(Fcos(n)) > epsilon) {
             cos += Fcos(n);
             n++;
         }

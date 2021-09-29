@@ -24,11 +24,11 @@ public class Pi {
     public void Pi(){
         pi = 0;
         n = 0;
-        while(Math.abs(Fpi(n)) > 0.001) {
+        while(Math.abs(Fpi(n)) > epsilon) {
             pi += Fpi(n);
             n++;
         }
         pi *= 4;
-        System.out.printf("%.4f\n", pi);
+        System.out.printf("pi= %.4f\n", pi);
     }
 }

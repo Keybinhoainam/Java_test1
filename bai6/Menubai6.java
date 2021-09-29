@@ -24,9 +24,11 @@ public class Menubai6 {
                         System.exit(0);
                 case 1: goc = new sin_cos();
                         break;
-                case 2: goc.Sin();
+                case 2: goc = new sin_cos();
+                        goc.Sin();
                         break;
-                case 3: goc.Cos();
+                case 3: goc = new sin_cos();
+                        goc.Cos();
                         break;
                 case 4: pi = new Pi();
                         pi.Pi();

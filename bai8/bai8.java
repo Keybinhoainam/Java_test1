@@ -1,5 +1,6 @@
 package bai8;
-
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -64,5 +65,28 @@ public class bai8 {
             System.out.println(m.get(i) + " xuat hien " + dem + " lan");
         }
         System.out.println();
+    }
+    public void sxtangdan()
+    {
+        Arrays.sort(a);
+    }
+    public void sxgiamdandan()
+    {
+        Arrays.sort(a);
+        Collections.reverse(Arrays.asList(a));
+    }
+    public void tbds()
+    {
+        double tong=0;
+        for(int i=0;i<n;i++)
+        {
+            tong+=a[i];
+        }
+        System.out.printf("trung binh: %d",tong/n);
+    }
+    public void maxmin()
+    {
+        Arrays.sort(a);
+        System.out.printf("so min,so max: %d, %d",a[0],a[a.length-1]);
     }
 }

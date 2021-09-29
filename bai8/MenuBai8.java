@@ -27,6 +27,7 @@ public class MenuBai8 {
                         break;
                 case 3: a.soLanXuatHien();
                         break;
+                case 4: 
 //                case 4: a.tachTu();break;
 //                case 6: b.tachSo();break;
 //                case 7: b.tachKiTu();break;

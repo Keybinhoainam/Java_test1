@@ -1,21 +1,28 @@
-package bai10;
+package bai11;
 
 import java.util.Scanner;
 
 public class MaTran {
     private int[][] a;
-    private int n;
+    private int n,m;
     private Scanner sc = new Scanner(System.in);
     
     public MaTran(){
-        System.out.println("Nhap so phan tu cua ma tran vuong: ");
-        this.n = sc.nextInt();
-        a = new int[n][n];
+        System.out.println("Nhap so hang, so cot cua ma tran : ");
+        this.n = Integer.parseInt(sc.nextLine());
+        this.m = Integer.parseInt(sc.nextLine());
+        a = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print("["+i+"]"+"["+j+"] = " );
+                a[i][j] = Integer.parseInt(sc.nextLine());
+            }
+        }
     }
     
-    public MaTran(int n){
+    public MaTran(int n,int m){
         this.n = n;
-        this.a = new int[n][n];
+        this.a = new int[n][m];
     }
 
     public int[][] getA() {
@@ -34,21 +41,21 @@ public class MaTran {
         this.n = n;
     }
     
-    public void nhap() {
-        System.out.println("Nhap Ma Tran: ");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                a[i][j] = sc.nextInt();
-            }
-        }
-        System.out.println("Ma Tran vua nhap: ");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(a[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
+    // public void nhap() {
+    //     for (int i = 0; i < n; i++) {
+    //         for (int j = 0; j < m; j++) {
+    //             System.out.print("["+i+"]"+"["+j+"] = " );
+    //             a[i][j] = Integer.parseInt(sc.nextLine());
+    //         }
+    //     }
+    //     System.out.println("Ma Tran vua nhap: ");
+    //     for (int i = 0; i < n; i++) {
+    //         for (int j = 0; j < m; j++) {
+    //             System.out.print(a[i][j] + " ");
+    //         }
+    //         System.out.println();
+    //     }
+    // }
     
     public void hienthi() {
         System.out.println("Ma Tran: ");
@@ -67,9 +74,9 @@ public class MaTran {
                 t[i][j] = a[i][j] + b[i][j];
             }
         }
-        MaTran m = new MaTran(n);
-        m.setA(t);
-        return m;
+        MaTran kq = new MaTran(n,m);
+        kq.setA(t);
+        return kq;
     }
     
     public MaTran tich(int[][] b) {
@@ -82,9 +89,9 @@ public class MaTran {
                 }
             }
         }
-        MaTran m = new MaTran(n);
-        m.setA(t);
-        return m;
+        MaTran kq = new MaTran(n,m);
+        kq.setA(t);
+        return kq;
     }
     
     public void maTranChuyenVi(){
@@ -137,22 +144,22 @@ public class MaTran {
         }
         
 
-        // các phần tử nằm trên đường chéo chính
-        // là các phần tử có chỉ số dòng = chỉ số cột
-        sum = 0;
-        String x = "";
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (i == j) {
-                    sum += a[i][j];
-                    x += String.valueOf(a[i][j]) + " ";
-                }
-            }
-        }
-        if(res < sum){
-            res = sum;
-            tmp = x;
-        }
+        // // các phần tử nằm trên đường chéo chính
+        // // là các phần tử có chỉ số dòng = chỉ số cột
+        // sum = 0;
+        // String x = "";
+        // for (int i = 0; i < n; i++) {
+        //     for (int j = 0; j < n; j++) {
+        //         if (i == j) {
+        //             sum += a[i][j];
+        //             x += String.valueOf(a[i][j]) + " ";
+        //         }
+        //     }
+        // }
+        // if(res < sum){
+        //     res = sum;
+        //     tmp = x;
+        // }
         
         System.out.println("Tong lon nhat: " + res);
         System.out.println(tmp);
@@ -191,83 +198,63 @@ public class MaTran {
         }
         
 
-        // các phần tử nằm trên đường chéo chính
-        // là các phần tử có chỉ số dòng = chỉ số cột
-        sum = 0;
-        String x = "";
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (i == j) {
-                    sum += a[i][j];
-                    x += String.valueOf(a[i][j]) + " ";
-                }
-            }
-        }
-        if(res > sum){
-            res = sum;
-            tmp = x;
-        }
+        // // các phần tử nằm trên đường chéo chính
+        // // là các phần tử có chỉ số dòng = chỉ số cột
+        // sum = 0;
+        // String x = "";
+        // for (int i = 0; i < n; i++) {
+        //     for (int j = 0; j < n; j++) {
+        //         if (i == j) {
+        //             sum += a[i][j];
+        //             x += String.valueOf(a[i][j]) + " ";
+        //         }
+        //     }
+        // }
+        // if(res > sum){
+        //     res = sum;
+        //     tmp = x;
+        // }
         
         System.out.println("Tong nho nhat: " + res);
         System.out.println(tmp);
    
     }
     
-    public boolean doiXung(){
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (a[i][j]!=a[j][i]) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-    
-    public void checkDoiXung(){
-        if(doiXung())
-            System.out.println("Ma tran doi xung");
-        else
-            System.out.println("Ma tran khong doi xung");
-    }
-    
-    public void getCofactor(int mat[][], int temp[][], int p, int q, int n)
+    public Boolean matrancon(int A[][],int B[][], int aRow, int aCol, int bRow, int bCol)
     {
-        int i = 0, j = 0;
- 
-        for (int row = 0; row < n; row++){
-            for (int col = 0; col < n; col++){
-                if (row != p && col != q){
-                    temp[i][j++] = mat[row][col];
-                    if (j == n - 1){
-                        j = 0;
-                        i++;
+        int iARow, iACol;
+        int iBRow, iBCol;
+        boolean flg;
+        int cnt = 0;
+    
+        for (iBRow = 0; iBRow <= bRow - aRow; iBRow++)
+        {
+            for (iBCol = 0; iBCol <= bCol - aCol; iBCol++)
+            {
+                flg = true;
+                for (iARow = 0; iARow < aRow; iARow++)
+                {
+                    for (iACol = 0; iACol < aCol; iACol++)
+                    {
+                        if (A[iARow][iACol] != B[iBRow + iARow][iBCol + iACol])
+                        {
+                            flg = false;
+                            break;
+                        }
+                    }
+                    if (flg == false)
+                    {
+                        break;
                     }
                 }
+                if (flg == true)
+                {
+                    cnt++;
+                }
             }
         }
-    }
- 
     
-    public int tinhDT(int mat[][], int n)
-    {
-        int D = 0;
-        if (n == 1)
-            return mat[0][0];
- 
-        int temp[][] = new int[this.n][this.n];
-        int sign = 1;
-        for (int f = 0; f < n; f++){   
-            getCofactor(mat, temp, 0, f, n);
-            D += sign * mat[0][f] * tinhDT(temp, n - 1);
-
-            sign = -sign;
-        }
-        return D;
-    }
-    
-    public void tinhDinhThuc(){
-        System.out.println("det a = " + tinhDT(a, n));
+        return (cnt > 0);
     }
  
 }

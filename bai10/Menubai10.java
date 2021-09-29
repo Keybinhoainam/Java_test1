@@ -17,6 +17,8 @@ public class Menubai10 {
             System.out.println("5. Kiểm tra xem ma trận có phải là ma trận đối xứng không");
             System.out.println("6. Tìm định thức của A");
             System.out.println("7. Tìm ma trận nghịch đảo của A");
+            System.out.println("8. Nhập ma trận cột B (nx1).giải hệ Phương trình tuyến tính thuần nhất");
+
             
             int temp;
             System.out.println("Moi ban chon ?");
@@ -36,7 +38,18 @@ public class Menubai10 {
                         break;
                 case 6: a.tinhDinhThuc();
                         break;
-                
+                case 7: 
+                        a = new MaTran();
+                        a.nhap();
+                        MaTranNghichDao b=new MaTranNghichDao();
+                        b.InverseOfMatrix(a.getA(), a.getN());
+                        break;
+                case 8: 
+                        a = new MaTran();
+                        a.nhap();
+                        PhuongTrinhTuyenTinh c=new PhuongTrinhTuyenTinh(a.getA(), a.getN());
+                        c.gaussianElimination();
+                        break;
                 case 0: return;
                 default: System.out.print("Nhap tu 1-17 hoac 0");
             }

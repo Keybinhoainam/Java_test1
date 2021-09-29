@@ -11,8 +11,7 @@ public class Menubai7 {
         Scanner in=new Scanner(System.in);
         Bai7 b=new Bai7();
         int temp;
-        while(true){
-            System.out.println("-------------------MENU-------------------");
+        System.out.println("-------------------MENU-------------------");
             System.out.println("1. Nhập vào 1 đoạn");
             System.out.println("2. Đưa ra độ dài xâu");
             System.out.println("3. Đưa ra số từ");
@@ -24,6 +23,8 @@ public class Menubai7 {
             System.out.println("9. Đưa ra các từ trong 1 đoạn và số lần xuất hiện của nó");
             System.out.println("10.  Nhập thêm 1 đoạn, đưa ra các từ xuất hiện trên cả 2 đoạn");
             System.out.println("Moi ban chon ?");
+        while(true){
+            
             temp=in.nextInt();
             switch(temp){
                 case 1: b.nhap();break;
